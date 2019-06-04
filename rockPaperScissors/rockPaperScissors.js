@@ -18,8 +18,24 @@
 *
 */
 
-var rockPaperScissors = function (
-) {
-  // TODO: your solution here
+var rockPaperScissors = function () {
+    // TODO: your solution here
+    // input: number of rounds to play RPS
+    // output: array of strings, each of which contains n possible plays
+    
+    let rpsArr = ['R', 'P', 'S'];
+    let result = [];
+     
+    // works for 3
+    for ( var a in rpsArr ) {
+        for ( var b in rpsArr ) {
+            for ( var c in rpsArr ) {
+                result.push( rpsArr[a] + rpsArr[b] + rpsArr[c] );
+            }
+        }
+    }
+    
+    return result;
 };
+rockPaperScissors();
 
