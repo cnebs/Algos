@@ -18,6 +18,7 @@
 *
 */
 
+// non-recursive
 var rockPaperScissors = function () {
     // TODO: your solution here
     // input: number of rounds to play RPS
@@ -39,3 +40,31 @@ var rockPaperScissors = function () {
 };
 rockPaperScissors();
 
+
+// RECURSIVE VERSION
+var rockPaperScissors = function () {
+    // TODO: your solution here
+    // input: number of rounds to play RPS
+    // output: array of strings, each of which contains n possible plays
+    
+    let rounds = n;
+    const rps = ['R', 'P', 'S'];
+    const result = [];
+
+    function recurse(remaining, passed) {
+
+      if( remaining === 0 ) {
+          result.push( passed );
+          return;
+      }
+
+      for ( let i = 0; i < rps.length; i++ ) {
+            const curr = rps[ i ];
+            recurse( remaining - 1, passed.concat(curr) );
+      }
+    };
+
+    recurse(rounds, []);
+    return SpeechRecognitionResultList;
+};
+rockPaperScissors();
