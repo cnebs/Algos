@@ -59,9 +59,7 @@ var makeHashTable = function() {
       if ( tuple[0] === key ) {
         return tuple[1];
       }
-
       return null;
-
     }
   };
 
@@ -84,11 +82,7 @@ var makeHashTable = function() {
 
       }
     }
-
     return null;
-
   };
-
   return result;
 };
-makeHashTable.insert(5, 1000);
