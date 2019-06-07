@@ -27,6 +27,8 @@ var makeHashTable = function() {
     var bucket = storage[index];
     var located = false;
 
+  
+
     for ( i = 0; i < bucket.length; i++ ) {
       var tuple = bucket[i];
 

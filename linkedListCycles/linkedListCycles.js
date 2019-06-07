@@ -32,9 +32,36 @@
  */
 
 var Node = function(value) {
-  return { value: value, next: null };
+  return { 
+    value: value, 
+    next: null 
+  };
 };
 
 var hasCycle = function(linkedList) {
-  // TODO: implement me!
+  // storage of values of linkedList
+  let arrayOfNexts = [];
+
+  // while there are children
+    while (linkedList) {
+      // if child has been passed before, return true
+      if (arrayOfNexts[linkedList]) {
+        return true;
+      }
+      // if not continue searching
+      arrayOfNexts[linkedList] = linkedList;
+      linkedList = linkedList.next;
+    }
+    // otherwise return true
+    return false;
 };
+
+var nodeA = Node('A');
+ var nodeB = nodeA.next = Node('B');
+ var nodeC = nodeB.next = Node('C');
+ var nodeA = Node('A');
+ var nodeD = nodeC.next = Node('D');
+ var nodeE = nodeD.next = Node('E');
+ hasCycle(nodeA); // => false
+ nodeE.next = nodeB;
+ hasCycle(nodeA); // => true
