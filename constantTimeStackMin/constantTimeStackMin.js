@@ -49,13 +49,13 @@
 // return the minimum value in the stack
   this.min = function() {
     let item;
-    debugger
     for ( item of storage ) {
-      if ( storage[item] < minVal) {
-        minVal = storage[item];
+      if ( item < minVal) {
+        minVal = item;
       }
     }
-    return storage, minVal;
+    console.log(storage)
+    return minVal;
   };
 
 };
