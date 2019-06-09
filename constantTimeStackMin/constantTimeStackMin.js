@@ -35,9 +35,16 @@
  // remove an item from the top of the stack
    this.pop = function() {
 
+       // 0: 200
+       // 1: 100
+       // storage[1] = popped
+       // 
+
      let popped = storage[--stackSize]
+     //console.log(popped)
      storage.splice(stackSize, 1);
-     return popped;
+     //console.log(popped)
+     //return popped;
 
    };
 
@@ -50,11 +57,11 @@
    this.min = function() {
      let item;
      for ( item of storage ) {
+         //console.log(item)
        if ( item < minVal) {
-         minVal = item;
+         minVal = item
        }
      }
-     console.log(storage)
      return minVal;
    };
 
