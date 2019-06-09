@@ -21,12 +21,14 @@
 
     let storage = [];
     let stackSize = 0;
+    let min = 0;
 
   // add an item to the top of the stack
     this.push = function(value) {
 
       storage[stackSize] = value;
       stackSize++;
+      if ( value > min ) {min = value};
 
     };
 
@@ -46,14 +48,13 @@
   
   // return the minimum value in the stack
     this.min = function() {
-      let i;
-      let result = 0;
-      for ( i = 0; i < stackSize.length; i++ ) {
-        if ( storage[i] > result) {
-          result = storage[i];
+      let item;
+      for ( item of storage ) {
+        if ( storage[item] < min) {
+          min = storage[item];
         }
       }
-      return result;
+      return min;
     };
 
   };
