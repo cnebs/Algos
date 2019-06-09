@@ -17,45 +17,45 @@
 /**
   * Stack Class
   */
-  var Stack = function() {
+ var Stack = function() {
 
-    let storage = [];
-    let stackSize = 0;
-    let minVal = 0;
+  let storage = [];
+  let stackSize = 0;
+  let minVal = 0;
 
-  // add an item to the top of the stack
-    this.push = function(value) {
+// add an item to the top of the stack
+  this.push = function(value) {
 
-      storage[stackSize] = value;
-      stackSize++;
-      if ( value > minVal ) {minVal = value};
-
-    };
-
-  // remove an item from the top of the stack
-    this.pop = function() {
-
-      let popped = storage[--stackSize]
-      storage[stackSize] = null;
-      return popped;
-
-    };
-
-  // return the number of items in the stack
-    this.size = function() {
-      return stackSize;
-    };
-  
-  // return the minimum value in the stack
-    this.min = function() {
-      let item;
-      for ( item of storage ) {
-        if ( storage[item] < min) {
-          minVal = storage[item];
-        }
-      }
-      return minVal;
-    };
+    storage[stackSize] = value;
+    stackSize++;
+    if ( value > minVal ) {minVal = value};
 
   };
 
+// remove an item from the top of the stack
+  this.pop = function() {
+
+    let popped = storage[--stackSize]
+    storage[stackSize] = null;
+    return popped;
+
+  };
+
+// return the number of items in the stack
+  this.size = function() {
+    return stackSize;
+  };
+
+// return the minimum value in the stack
+  this.min = function() {
+    let item;
+    debugger
+    for ( item of storage ) {
+      if ( storage[item] < minVal) {
+        minVal = storage[item];
+      }
+    }
+    return storage, minVal;
+  };
+
+};
