@@ -35,4 +35,21 @@
 
 var bubbleSort = function(array) {
   // Your code here.
+
+  let i;
+
+  for ( i in array ) {
+
+    if ( array[i] > array[i+1] ) {
+      
+      array[i] = array[i+1]
+
+    }
+
+  }
+
+  return array;
+
 };
+
+bubbleSort([1, 2, 3, 4]);
