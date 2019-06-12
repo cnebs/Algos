@@ -45,8 +45,14 @@ var testingTransform = function(array) {
   return transform;
 };
 
-var insertionSort = function(array
-) {
-  // Your code goes here. Feel free to add helper functions if needed.
-  return array;
-};
+var insertionSort = function(array) {
+  for(let i = 0; i < array.length; i++) {
+    let clone = array[i];
+
+    for(let j = i - 1; j >= 0 && (array[j] > clone); j--) { 
+      array[j+1] = array[j];
+    }
+    array[j+1] = clone;
+  }
+  return array; 
+}
