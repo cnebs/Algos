@@ -10,12 +10,15 @@
  *    Combines the two arrays and the pivot into a sorted array.
  */
 
-
+// helper to swap index vals
 var swap = function(array, leftIndex, rightIndex){
   let temp = array[leftIndex];
   array[leftIndex] = array[rightIndex];
   array[rightIndex] = temp;
 }
+
+// helper to pratition 
+// (moves left and right pointers together aronud a pivot until a swap is needed)
 var divide = function(array, left, right) {
   let pivot = array[Math.floor((right + left) / 2)], 
   i = left, 
@@ -37,16 +40,17 @@ var divide = function(array, left, right) {
   return i;
 }
 
-var quickSort = function(array, left, right) {
+// main quick sorter function
+var quicksort = function(array, left, right) {
     // left and right have 2 be index vals
   let index;
   if (array.length > 1) {
     index = divide(array, left, right); 
     if (left < index - 1) { 
-      quickSort(array, left, index - 1);
+      quicksort(array, left, index - 1);
     }
     if (index < right) { 
-      quickSort(array, index, right);
+      quicksort(array, index, right);
     }
   }
   return array;
