@@ -96,7 +96,20 @@
  */
 
 
-
 var mergeSort = function(array) {
   // Your code here.
+
+  var tempArr = [];
+
+
+
+  for ( let i = 0; i <= array.length; i++ ) {
+      let mySlice = array.slice(i, 1);
+      tempArr.push(mySlice);
+  }
+
+  for ( let i = 0; i <= tempArray.length; i++ ) {
+      
+  }
+
 };
