@@ -25,19 +25,24 @@ var powerSet = function(str) {
   for ( let i in str ) {
     obj[ str[i] ] = 1;
   };
+  // console.log(obj);
 
-  // build transfer and final arrays
+  // build a transfer and combo holder array
   let arr = Object.keys(obj);
-  let result = [[]];
+  let combos = [[]];
 
   for ( let i in arr ) {
-    let len = result.length; // stop inf loop up ahead w/ this
+    let len = combos.length; // stop inf loop up ahead w/ this
 
+    // build nested array of combos
     for( let x = 0; x < len; x++ ){
-      result.push( result[x].concat(arr[i]) )
+      combos.push( combos[x].concat(arr[i]) )
     }
   }
-return result;
+  // join the combos into strings and return it
+  let result = combos.map((combo) => combo.join(''));
+
+  return result;
 };
 
-console.log(powerSet("chaz"));
+console.log(powerSet("jump"));
