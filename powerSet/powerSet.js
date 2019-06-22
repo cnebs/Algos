@@ -18,4 +18,26 @@
  */
 
 var powerSet = function(str) {
+
+  // remove dupes using an obj
+  let obj = {};
+
+  for ( let i in str ) {
+    obj[ str[i] ] = 1;
+  };
+
+  // build transfer and final arrays
+  let arr = Object.keys(obj);
+  let result = [[]];
+
+  for ( let i in arr ) {
+    let len = result.length; // stop inf loop up ahead w/ this
+
+    for( let x = 0; x < len; x++ ){
+      result.push( result[x].concat(arr[i]) )
+    }
+  }
+return result;
 };
+
+console.log(powerSet("chaz"));
