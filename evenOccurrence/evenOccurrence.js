@@ -28,6 +28,8 @@ var evenOccurrence = function(arr) {
       return arr[i];
     };
   }
+
+  return null;
   
 };
 
