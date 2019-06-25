@@ -29,12 +29,11 @@ var evenOccurrence = function(arr) {
   for ( j in obj ) {
     if (obj[j] % 2 === 0) {
       return j;
-    } else {
-      return null;
     }
   }
+  return null;
   
 };
 
-var onlyEven = evenOccurrence(['meow', 1, 1, 'meow']);
+var onlyEven = evenOccurrence([1, 3, 3, 3, 2, 4, 4, 2, 5]);
 console.log('Result: ', onlyEven); //  4
