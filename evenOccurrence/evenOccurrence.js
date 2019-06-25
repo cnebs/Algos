@@ -26,14 +26,20 @@ var evenOccurrence = function(arr) {
   
   console.log('Object: ', obj);
 
-  for ( j in obj ) {
-    if (obj[j] % 2 === 0) {
-      return j;
-    }
+  for ( i in arr ) {
+    if (obj[arr[i]] % 2 === 0) {
+      return arr[i];
+    };
   }
-  return null;
+
+  // for ( j in obj ) {
+  //   if (obj[j] % 2 === 0) {
+  //     return j;
+  //   }
+  // }
+  // return null;
   
 };
 
-var onlyEven = evenOccurrence([1, 3, 3, 3, 2, 4, 4, 2, 5]);
+var onlyEven = evenOccurrence(['meow', 1, 1, 'meow']);
 console.log('Result: ', onlyEven); //  4
