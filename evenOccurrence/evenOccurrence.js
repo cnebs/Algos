@@ -16,20 +16,25 @@ var evenOccurrence = function(arr) {
   let j;
   
   for ( i in arr ) {
-    if (obj[arr[i]]) {
-      obj[arr[i]]++
-    } else {
+    if (!obj[arr[i]]) {
       obj[arr[i]] = 1;
+      console.log('Item added to object: ', obj)
+    } else if (obj[arr[i]]) {
+      obj[arr[i]]++
     }
   }
   
+  console.log('Object: ', obj);
+
   for ( j in obj ) {
     if (obj[j] % 2 === 0) {
       return j;
+    } else {
+      return null;
     }
   }
   
 };
 
-var onlyEven = evenOccurrence([1, 7, 2, 4, 5, 6, 8, 9, 6, 4]);
-console.log(onlyEven); //  4
+var onlyEven = evenOccurrence(['meow', 1, 1, 'meow']);
+console.log('Result: ', onlyEven); //  4
