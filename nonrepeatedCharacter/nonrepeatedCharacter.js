@@ -7,22 +7,18 @@
  */
 
 var firstNonRepeatedCharacter = function(str) {
-  // TODO: your solution here
-
-
   let obj = {};
   let char;
 
-  for ( char of str ) {
-    obj[ char ] = obj[ char ] +1 || 1;
-  }
+  for ( char of str ) { // str -> 'ABA'
+    obj[ char ] = obj[ char ] +1 || 1; // obj -> { A:2, B:1 }
+  };
 
   for ( char in str ) {
-    if ( obj[str[char]] === 1 ) { return str[char] };
-  }
+    if ( obj[str[char]] === 1 ) { return str[char] }; // At char position in string, if associated object key === 1, return char
+  };
 
-  return null;
-
+  return null; // else null
 };
 
 
