@@ -4,36 +4,28 @@
  * Return null if there are no even-occurrence items.
 */
 
-/*
- * example usage:
- */
 
 var evenOccurrence = function(arr) {
-  // Your code here.
   
   let obj = {};
-  let i;
-  let j;
+  let element;
   
-  // If item is in array, push into object and set to val 1, if already in object, val++ in object
-  for ( i in arr ) {
-    if (!obj[arr[i]]) {
-      obj[arr[i]] = 1;
-    } else if (obj[arr[i]]) {
-      obj[arr[i]]++
-    }
-  }
+  // obj -> { ele: 1, ele: 1, ele: 3, ele: 1, ... }
+  arr.forEach( (element) => obj[element] = obj[element] +1 || 1 ); 
 
-  // Iterate through array, first array element that has an even count in object is returned
-  for ( i in arr ) {
-    if (obj[arr[i]] % 2 === 0) {
-      return arr[i];
-    };
-  }
+  // obj @ arr[ele] -> { oddEle: 3, evenEle: 2, evenEleTwo: 4 } -> return 'evenEle'
+  for ( element in arr ) {
+    if (obj[arr[element]] % 2 === 0) { return arr[element] };
+  };
 
-  // If no return yet, return null
   return null;
 };
 
-var onlyEven = evenOccurrence([1, 2, 2, 1, 3, 4, 2, 2]);
-console.log('Result: ', onlyEven); //  4
+
+
+
+
+
+
+var onlyEven = evenOccurrence(['meow', 2, 2, 'meow']);
+console.log('First even occurence: ', onlyEven); // -> meow
