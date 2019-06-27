@@ -6,6 +6,7 @@
  *   firstNonRepeatedCharacter('AACBDB'); // => 'C'
  */
 
+ /*
 var firstNonRepeatedCharacter = function(str) {
   let obj = {};
   let char;
@@ -15,14 +16,24 @@ var firstNonRepeatedCharacter = function(str) {
   };
 
   for ( char in str ) {
-    if ( obj[str[char]] === 1 ) { return str[char] }; // At char position in string, if associated object key === 1, return char
+    if ( obj[str[char]] === 1 ) { return str[char] }; // For each char in str, if its obj key === 1: return first char value to match
   };
 
   return null; // else null
 };
+*/
+
+const firstNonRepeatedCharacter = (str) => [...str].find(char => str.match(new RegExp(char, 'g')).length === 1);
+
+// spread string to array -> 
+// find will return char of string if it agrees with passed function -> 
+// which uses regex to check entire string if that char is anywhere else ->
+// and that the length of the match is only one
 
 
+// Tests
 let trial1 = firstNonRepeatedCharacter('ABA'); // => 'B'
 let trial2 = firstNonRepeatedCharacter('AACBDB'); // => 'C'
-
-console.log(`Trial Result: ${trial2}`);
+let trial3 = firstNonRepeatedCharacter('AABCDIOCBZODP') // => 'I'
+// Log
+console.log(`Trial Result: '${trial3}'`);
