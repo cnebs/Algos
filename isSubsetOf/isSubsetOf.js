@@ -22,27 +22,15 @@
  */
 
 Array.prototype.isSubsetOf = function (arr) {
-
-  let obj = {};
-  let i;
   let result = false;
 
-  for ( i of arr ) {
-    i in obj ? obj[i]++ : obj[i] = 1;
-  }
-
-  for ( i of this ) {
-    if ( i in obj ) {
-      result = true;
-    } else {
-      result = false;
-      break;
-    }
+  for ( let i of this ) {
+    arr.includes(i) ? result = true : result = false;
   }
 
   return result;
 
 };
 
-var b = ['merge','reset','add']
+var b = ['merge','reset','canada']
 console.log('Result: ', b.isSubsetOf(['reset','merge','add','commit'])) // true
