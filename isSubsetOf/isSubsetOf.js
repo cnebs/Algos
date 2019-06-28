@@ -19,8 +19,30 @@
 
 /*
  * Extra credit: Make the method work for arrays that contain objects and/or arrays as elements.
-*/
+ */
 
 Array.prototype.isSubsetOf = function (arr) {
-  // your code here
+
+  let obj = {};
+  let i;
+  let result = false;
+
+  for ( i of arr ) {
+    i in obj ? obj[i]++ : obj[i] = 1;
+  }
+
+  for ( i of this ) {
+    if ( i in obj ) {
+      result = true;
+    } else {
+      result = false;
+      break;
+    }
+  }
+
+  return result;
+
 };
+
+var b = ['merge','reset','add']
+console.log('Result: ', b.isSubsetOf(['reset','merge','add','commit'])) // true
