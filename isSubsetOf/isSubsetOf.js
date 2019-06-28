@@ -4,17 +4,17 @@
  */
 
 
-Array.prototype.isSubsetOf = function (arr) {
-  let obj = {}
+Array.prototype.isSubsetOf = function (arr, obj={}) {
 
-  arr.forEach((element) => obj[element] = 1); // map arr elements to obj- now obj/arr eles are strings
+  arr.forEach((element) =>  obj[JSON.stringify(element)] = 1);
 
-  return this.reduce( (tot, ele) => !obj[ele] ? false : tot, true); // from eles of 'this', if any are not in obj, false
+  return this.reduce( (t, element) => !obj[JSON.stringify(element)] ? false : t, true);
 
 };
 
 
-let context = [ 'fox', 'dog', 'cow', ['sup'], {'hi':'greeting'} ]
-let input = [ 'dog', 'cow', 'fox', ['sup'], {'hi':'greeting'} ]
+// ####### testing #######
+let context = [ 'fox', 'dog', 'cow', ['sup', {'yo':'hi'}] ]
+let input = [ 'dog', 'cow', 'fox', ['sup', {'yo':'greeting'}] ]
 
-console.log('\nIs ', context, ' in \n',input, '? \n\n', 'Result: ', context.isSubsetOf(input),'\n')
+console.log('\nIs ', context, ' in \n',input, '? \n\n', 'Result: ', context.isSubsetOf(input),'\n');
