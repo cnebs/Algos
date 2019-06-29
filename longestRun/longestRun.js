@@ -14,14 +14,14 @@
  */
 
 var longestRun = function (string) {
-  let run = match = [ 0, 0 ];
+  let longest = run = [ 0, 0 ];
   for ( let i = 1; i < string.length; i++ ) {
     if ( string[ i ] === string[ i - 1 ] ) {
-      match[1] = i;
-      run = ( match[ 1 ] - match[ 0 ] > run[ 1 ] - run[ 0 ] ) ? match : run;
-    } else match = [ i, i ];
+      run[1] = i;
+      longest = ( run[ 1 ] - run[ 0 ] > longest[ 1 ] - longest[ 0 ] ) ? run : longest;
+    } else run = [ i, i ];
   }
-  return run;
+  return longest;
 
 };
 
