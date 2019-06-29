@@ -14,6 +14,7 @@
  */
 
 var longestRun = function (string) {
+  if (string === '') return null;
   let longest = run = [ 0, 0 ];
   for ( let i = 1; i < string.length; i++ ) {
     if ( string[ i ] === string[ i - 1 ] ) {
@@ -21,8 +22,6 @@ var longestRun = function (string) {
       longest = ( run[ 1 ] - run[ 0 ] > longest[ 1 ] - longest[ 0 ] ) ? run : longest;
     } else run = [ i, i ];
   }
-
-  if (longest[0] === 0 && longest[1] === 0) return null;
   return longest;
 };
 
