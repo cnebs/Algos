@@ -21,8 +21,9 @@ var longestRun = function (string) {
       longest = ( run[ 1 ] - run[ 0 ] > longest[ 1 ] - longest[ 0 ] ) ? run : longest;
     } else run = [ i, i ];
   }
-  return longest;
 
+  if (longest[0] === 0 && longest[1] === 0) return null;
+  return longest;
 };
 
 // If you need a random string generator, use this!
