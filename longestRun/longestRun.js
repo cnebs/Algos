@@ -14,7 +14,15 @@
  */
 
 var longestRun = function (string) {
-  // TODO: Your code here!
+  let record = streak = [ 0, 0 ];
+  for ( let i = 1; i < string.length; i++ ) {
+    if ( string[ i ] === string[ i - 1 ] ) {
+      streak[1] = i;
+      record = ( streak[ 1 ] - streak[ 0 ] > record[ 1 ] - record[ 0 ] ) ? streak : record;
+    } else streak = [ i, i ];
+  }
+  return record;
+
 };
 
 // If you need a random string generator, use this!
@@ -29,3 +37,7 @@ var randomString = function (len) {
 
   return text;
 };
+
+let rStr = randomString(45);
+let trial = longestRun(rStr);
+console.log('\n----------\nTrial: \n\n For string: \'', rStr, '\'\n\n Result: ', trial, '\n----------');
