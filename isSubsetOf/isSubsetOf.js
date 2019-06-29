@@ -14,7 +14,7 @@ Array.prototype.isSubsetOf = function (arr, obj={}) {
 
 
 // ####### testing #######
-let context = [ 'fox', 'dog', 'cow', ['sup', {'yo':'hi'}] ]
-let input = [ 'dog', 'cow', 'fox', ['sup', {'yo':'greeting'}] ]
+let context = [ 'fox', 'dog', {"key":"value"}] ;
+let input = [ 'dog', 'cow', 'fox', {"key": "value"}, [1, 2, {"key":"value"}]] ;
 
-console.log('\nIs ', context, ' in \n',input, '? \n\n', 'Result: ', context.isSubsetOf(input),'\n');
+console.log('---\nIs: \n', context, ' \nin: \n',input, '\n? \n\n', 'Result: ', context.isSubsetOf(input),'\n---');
