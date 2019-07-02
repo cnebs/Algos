@@ -42,7 +42,7 @@ rockPaperScissors();
 
 
 // RECURSIVE VERSION
-var rockPaperScissors = function () {
+var rockPaperScissors = function (n) {
     // TODO: your solution here
     // input: number of rounds to play RPS
     // output: array of strings, each of which contains n possible plays
@@ -65,6 +65,6 @@ var rockPaperScissors = function () {
     };
 
     recurse(rounds, []);
-    return SpeechRecognitionResultList;
+    return result;
 };
 rockPaperScissors();

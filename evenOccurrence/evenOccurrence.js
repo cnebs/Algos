@@ -25,7 +25,5 @@ var evenOccurrence = function(arr) {
 
 
 
-
-
 var onlyEven = evenOccurrence(['meow', 2, 2, 'meow']);
 console.log('First even occurence: ', onlyEven); // -> meow

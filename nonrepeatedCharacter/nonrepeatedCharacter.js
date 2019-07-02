@@ -28,12 +28,10 @@ const firstNonRepeatedCharacter = (str) => [...str].find(char => str.match(new R
 // spread string to array -> 
 // find will return char of string if it agrees with passed function -> 
 // which uses regex to check entire string if that char is anywhere else ->
-// and that the length of the match is only one
-
+// and that the length of the match is only one to ignore side by side repeat chars as a single regex match
 
 // Tests
-let trial1 = firstNonRepeatedCharacter('ABA'); // => 'B'
-let trial2 = firstNonRepeatedCharacter('AACBDB'); // => 'C'
 let trial3 = firstNonRepeatedCharacter('AABCDIOCBZODP') // => 'I'
+let trial4 = firstNonRepeatedCharacter('AABB')
 // Log
 console.log(`Trial Result: '${trial3}'`);
