@@ -38,5 +38,37 @@
  */
 
 
-var asyncMap = function(tasks, callback) {
+var asyncMap = (tasks, callback) => {
+  let res = [];
+  let count = 0;
+
+  for (let i in tasks) {
+    tasks[i]( (val) => {
+      res[i] = val; 
+      count++;
+      if (count == tasks.length) {
+        callback(res);
+      }
+    });
+  }
 };
+
+console.log(
+asyncMap([
+    function(cb){
+      setTimeout(function(){
+        cb('one');
+      }, 200);
+    },
+    function(cb){
+      setTimeout(function(){
+        cb('two');
+      }, 100);
+    }
+   ],
+    function(results){
+      // the results array will equal ['one','two'] even though
+      // the second function had a shorter timeout.
+      console.log(results); // ['one', 'two']
+   })
+)
