@@ -13,5 +13,32 @@
 
 
 var commonCharacters = function(string1, string2) {
-  // TODO: Your code here!
+  let obj1 = {};
+  let obj2 = {};
+  let result = '';
+  let c;
+  s1 = string1;
+  s2 = string2;
+
+  for ( c of s1 ) {
+    obj1[ c ] = 1;
+  }
+  for ( c of s2 ) {
+    obj2[ c ] = 1;
+  }
+  for ( c of s1 ) {
+    if ( obj1[ c ] == obj2[ c ] ) {
+      obj1[ c ]++
+    }
+  }
+  for ( c in obj1 ) {
+    if (obj1[ c ] > 1) {
+      result += c;
+    }
+  }
+  return result;
+
 };
+
+let cc = commonCharacters('hello', 'howdy');
+console.log(cc);
