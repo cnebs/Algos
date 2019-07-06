@@ -17,16 +17,14 @@ var commonCharacters = function(string1, string2) {
   let obj2 = {};
   let result = '';
   let c;
-  s1 = string1;
-  s2 = string2;
 
-  for ( c of s1 ) {
+  for ( c of string1 ) {
     obj1[ c ] = 1;
   }
-  for ( c of s2 ) {
+  for ( c of string2 ) {
     obj2[ c ] = 1;
   }
-  for ( c of s1 ) {
+  for ( c of string1 ) {
     if ( obj1[ c ] == obj2[ c ] ) {
       obj1[ c ]++
     }
