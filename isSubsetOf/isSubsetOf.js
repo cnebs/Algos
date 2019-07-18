@@ -13,8 +13,13 @@ Array.prototype.isSubsetOf = function (arr, obj={}) {
 };
 
 
+
+
 // ####### testing #######
-let context = [ 'fox', 1, 1, 'dog', {"key":"value"}] ;
+let context = [ 'fox', 1, 1, 'dog', {"key":"Value"}] ;
+
+
 let input = [ 'dog', 1, 1,'cow', 'fox', {"key": "value"}, [1, 2, {"key":"value"}]] ;
 
 console.log('---\nIs: \n', context, ' \nin: \n',input, '\n? \n\n', 'Result: ', context.isSubsetOf(input),'\n---');
+

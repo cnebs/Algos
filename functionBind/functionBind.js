@@ -23,9 +23,10 @@
  *
 */
 
-var bind = function(
-) {
-  // TODO: Your code here
+const bind (fn, obj) => {
+  
+  
+
 };
 
 /*

@@ -23,12 +23,14 @@ var firstNonRepeatedCharacter = function(str) {
 };
 */
 
-const firstNonRepeatedCharacter = (str) => [...str].find(char => str.match(new RegExp(char, 'g')).length === 1);
+const firstNonRepeatedCharacter = (str) => 
+
+[...str].find(char => str.match(new RegExp(char, 'g')).length === 1);
 
 // spread string to array -> 
 // find will return char of string if it agrees with passed function -> 
 // which uses regex to check entire string if that char is anywhere else ->
-// and that the length of the match is only one to ignore side by side repeat chars as a single regex match
+// and that the length of the match is only one to ignore side by side repeat ch  aars as a single regex match
 
 // Tests
 let trial3 = firstNonRepeatedCharacter('AABCDIOCBZODP') // => 'I'
