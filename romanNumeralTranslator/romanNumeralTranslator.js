@@ -27,43 +27,39 @@ const DIGIT_VALUES = {
   M: 1000
 };
 
-var translateRomanNumeral = function(romanNumeral) {
+const translateRomanNumeral = function(romanNumeral) {
 
-  var DIGIT_VALUES = {
-I: 1,
-V: 5,
-X: 10,
-L: 50,
-C: 100,
-D: 500,
-M: 1000
+  if (typeof romanNumeral !== 'string') {return null};
+
+  const vals = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000
+  };
+
+  let result = 0;
+
+  for ( let i = 0; i < romanNumeral.length; i++ ) {
+
+    let numeral = romanNumeral[i]
+    if ( !vals[numeral] )      { return null }
+    if ( romanNumeral === '' ) { return 0 }
+
+    if ( romanNumeral[i+1] ) {
+      var nextNumeral = romanNumeral[i+1];
+    }
+
+    if ( vals[numeral] < vals[nextNumeral] ) {
+      result = result - vals[numeral];
+    } else {
+      result = result + vals[numeral];
+    }
+  }
+  return result;
 };
 
-var result = 0;
-
-if (typeof romanNumeral !== 'string') {return null};
-
-for (var i = 0; i < romanNumeral.length; i++) {
-
-  var numeral = romanNumeral[i]
-
-  if ( !DIGIT_VALUES[numeral] )
-
-  if ( romanNumeral === '' ) {
-    return 0;
-  }
-
-  if ( romanNumeral[i+1] ) {
-    var nextNumeral = romanNumeral[i+1];
-  }
-
-  if(DIGIT_VALUES[numeral] < DIGIT_VALUES[nextNumeral]) {
-    result = result-DIGIT_VALUES[numeral];
-  } else {
-    result = result+DIGIT_VALUES[numeral];
-  }
-}
-
-return result;
-
-};
+console.log(translateRomanNumeral("MCXI"));
