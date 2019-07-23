@@ -17,7 +17,7 @@
  * all non-empty string inputs to be valid roman numerals.
  */
 
-var DIGIT_VALUES = {
+const DIGIT_VALUES = {
   I: 1,
   V: 5,
   X: 10,
@@ -28,6 +28,40 @@ var DIGIT_VALUES = {
 };
 
 var translateRomanNumeral = function(romanNumeral) {
-// TODO: Implement me!
+
+  var DIGIT_VALUES = {
+I: 1,
+V: 5,
+X: 10,
+L: 50,
+C: 100,
+D: 500,
+M: 1000
+};
+
+var result = 0;
+
+for (var i = 0; i < romanNumeral.length; i++) {
+
+  var numeral = romanNumeral[i]
+
+  if ( !DIGIT_VALUES[numeral] )
+
+  if ( romanNumeral === '' ) {
+    return 0;
+  }
+
+  if ( romanNumeral[i+1] ) {
+    var nextNumeral = romanNumeral[i+1];
+  }
+
+  if(DIGIT_VALUES[numeral] < DIGIT_VALUES[nextNumeral]) {
+    result = result-DIGIT_VALUES[numeral];
+  } else {
+    result = result+DIGIT_VALUES[numeral];
+  }
+}
+
+return result;
 
 };
