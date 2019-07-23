@@ -41,6 +41,8 @@ M: 1000
 
 var result = 0;
 
+if (typeof romanNumeral !== 'string') {return null};
+
 for (var i = 0; i < romanNumeral.length; i++) {
 
   var numeral = romanNumeral[i]
