@@ -22,5 +22,43 @@ Example input:
 
 function sudokuChecker(board) {
   // Your code here.
+
+  let solved = false, rowCheck, colCheck, gridCheck, row, col;
+
+  rowCheck = row => {
+    for (let char in row) {
+      if (!row.includes(String(Number(char)+1))) {
+        return false
+      }
+    } return true;
+  }
+
+  colBuilder = board => {
+    const colBoard = [];
+    for (row of board) {
+      console.log(row);
+    }
+  }
+
+  
+  const BOARD = [];
+  
+  (board.split("\n")).forEach( row => BOARD.push(row.split("")))
+  
+  for ( row in BOARD ) {
+    if (!rowCheck) return 'invalid';
+  }
+  
+  
+  console.log('colBuilder test', colBuilder(BOARD))
+
+  console.log(BOARD);
+
+
+  return solved;
   
 }
+
+const test = sudokuChecker("735814296\n896275314\n214963857\n589427163\n362189745\n471356982\n923541678\n648792531\n157638429");
+
+console.log(test);
