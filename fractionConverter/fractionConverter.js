@@ -13,16 +13,18 @@
  */
 
 var toFraction = function(number) {
-
   let n = number, d = 1;
 
-  while (n % 1 !== 0 ) {
+  while ( n % 1 !== 0 ) {
     d++;
-    n = number * d
+    n = (number*d).toFixed(7); // need to toFixed to handle spec bot's last test...
+
+    if (n > 253210 && n < 253215)
+    // edge case of last spec bot test means need to reduce to less decimals in denom
+    {console.log(`numerator: ${n};  denomenator: ${d}`)}
   }
 
 return `${Math.round(n)}/${Math.abs(d)}`
 }
 
-console.log(toFraction(0.75));
-
+console.log(toFraction(0.253213));
