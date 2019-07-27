@@ -13,5 +13,16 @@
  */
 
 var toFraction = function(number) {
-  // Your code here
-};
+
+  let n = number, d = 1;
+
+  while (n % 1 !== 0 ) {
+    d++;
+    n = number * d
+  }
+
+return `${Math.round(n)}/${Math.abs(d)}`
+}
+
+console.log(toFraction(0.75));
+
