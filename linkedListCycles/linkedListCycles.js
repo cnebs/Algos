@@ -39,21 +39,26 @@ var Node = function(value) {
 };
 
 var hasCycle = function(linkedList) {
-  // storage of values of linkedList
-  let arrayOfNexts = [];
+  
+  let slow = linkedList;
+  let fast = linkedList;
+  let bool = true;
 
-  // while there are children
-    while (linkedList) {
-      // if child has been passed before, return true
-      if (arrayOfNexts[linkedList]) {
-        return true;
-      }
-      // if not continue searching
-      arrayOfNexts[linkedList] = linkedList;
-      linkedList = linkedList.next;
+  while (fast) {
+    bool = !bool;
+
+    if ( bool === true ) {
+      slow = slow.next;
     }
-    // otherwise return true
-    return false;
+
+    fast = fast.next;
+    if (slow === fast) {
+      return true;
+    }
+  }
+
+  return false;
+  
 };
 
 var nodeA = Node('A');
