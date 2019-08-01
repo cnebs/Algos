@@ -1,3 +1,4 @@
+
 /**
 * Extend the Number prototype with a new method called `toEnglish`.
 * It should return the number as a string using English words.
@@ -55,4 +56,31 @@ var numbersToPlace = {
 
 Number.prototype.toEnglish = function () {
   // return my value as english words
+  let num = Number(this.toString());
+  const arr = ('' + num).split('').map( (v, i) => Number(v))
+  let digits = arr.length;
+  let tensHolder = new Array(digits).fill(0);
+  tensHolder[0] = 1;
+  finalDigits = Number(tensHolder.join(''));
+
+  for (let i in arr) {
+    if (i == 0) {
+      arr[i] = `${numbersToWords[arr[i]]} ${numbersToPlace[finalDigits]}`;
+    }
+    digits = arr.length-1
+
+    if (i == (arr.length-2)) {
+      let tens = arr[arr.length-2]
+      arr[arr.length-2] = numbersToWords[Number(String(tens) + '0')]
+    }
+
+    if (i == (arr.length-1)) {
+      arr[arr.length-1] = numbersToWords[(arr[arr.length-1])];
+    }
+  }
+
+  console.log(arr.join(' '));
+
 };
+
+console.log((942).toEnglish());
