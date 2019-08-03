@@ -10,23 +10,25 @@
  */
 
 // Solved in O(n) time with O(1) memory
+
 var sumArray = function(array) {
+  let sum = 0;
+  let result = Number.NEGATIVE_INFINITY;
 
-  let tempSum = 0;
-  let  totSum = 0;
+  for ( let i in array ) {
+    sum += array[i];
 
-  for ( let i = 0; i < array.length; i++) {
-    tempSum += array[i];
-
-    if ( tempSum > totSum ) {
-      totSum = tempSum;
-
+    if ( sum > result ) {
+      result = sum;
     }
-    if ( tempSum < 0 ) {tempSum = 0}
+
+    if (array[i] > result) {
+      sum, result = array[i];
+    }
   }
-
-  return totSum;
-
+  return result;
 };
 
-console.log(sumArray([1, 2, 3, -4, 5]))
+console.log(sumArray([-7, -6, -9]))
+
+// console.log(sumArray([1, 2, 3, -4, 5]))
