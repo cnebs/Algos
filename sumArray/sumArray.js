@@ -11,4 +11,22 @@
 
 // Solved in O(n) time with O(1) memory
 var sumArray = function(array) {
+
+  let tempSum = 0;
+  let  totSum = 0;
+
+  for ( let i = 0; i < array.length; i++) {
+    tempSum += array[i];
+
+    if ( tempSum > totSum ) {
+      totSum = tempSum;
+
+    }
+    if ( tempSum < 0 ) {tempSum = 0}
+  }
+
+  return totSum;
+
 };
+
+console.log(sumArray([1, 2, 3, -4, 5]))
