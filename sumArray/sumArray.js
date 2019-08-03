@@ -17,18 +17,20 @@ var sumArray = function(array) {
 
   for ( let i in array ) {
     sum += array[i];
+    console.log(sum)
 
     if ( sum > result ) {
       result = sum;
     }
 
     if (array[i] > result) {
-      sum, result = array[i];
+      sum = array[i];
+      result = array[i];
     }
   }
   return result;
 };
 
-console.log(sumArray([-7, -6, -9]))
+console.log(sumArray([-5, 2, 3]))
 
 // console.log(sumArray([1, 2, 3, -4, 5]))
