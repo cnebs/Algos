@@ -32,5 +32,3 @@ var sumArray = function(array) {
 };
 
 console.log(sumArray([-5, 2, 3]))
-
-// console.log(sumArray([1, 2, 3, -4, 5]))
