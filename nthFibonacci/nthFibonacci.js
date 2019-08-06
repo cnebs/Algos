@@ -21,14 +21,15 @@
  */
 
 var nthFibonacci = function (n) {
-  // TODO: implement me!
- 
-  if (n < 2) { // 0 / 1 base case
+
+  if (n < 2) {
     return n
-  } else { // add previous two ( n - 1 ) + ( n - 2 )
-    nthFibonacci(n-1) + nthFibonacci(n-2)
+  } else {
+    return nthFibonacci(n-1) + nthFibonacci(n-2);
   }
+
 };
 
+console.log(nthFibonacci(10));
 
 
