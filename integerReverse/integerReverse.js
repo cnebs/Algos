@@ -12,14 +12,17 @@
 function reverseInteger(number){
   // TODO: Implement this function!
   let reverseNum = 0;
+
   while (number>1) {
+
     reverseNum = ( (reverseNum * 10) + (number % 10) );
     number = Math.floor( number/10 )
   }
+  
   return reverseNum;
 }
 
-const test = reverseInteger(99887766);
+const test = reverseInteger(123);
 
 console.log(test)
 
@@ -37,4 +40,3 @@ console.log(test)
 // 5
 // Math.floor(5/10)
 // 0
-

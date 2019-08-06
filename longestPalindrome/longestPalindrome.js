@@ -8,9 +8,9 @@
 
 const longestPalindrome = function (string) {
   if (string.length) {
-    for (let a = string.length; a > 0; a--) {
-      for (let b = 0; b <= string.length-a; b++) {
-        let sub = string.substr(b, a);
+    for (let rear = string.length; rear > 0; rear--) {
+      for (let front = 0; front <= string.length-rear; front++) {
+        let sub = string.substr(front, rear);
         if (sub === sub.split('').reverse().join('')) {
           return sub
         }

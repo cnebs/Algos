@@ -48,7 +48,6 @@ var bubbleSort = function(array) {
         bool = true;
       }
     }
-
   }
   console.log(array);
   return array;
