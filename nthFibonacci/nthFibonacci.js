@@ -22,7 +22,9 @@
 
 var nthFibonacci = function (n, l=0, c=1, f=1) {
 
-  if (f == n) {
+  if (n === 0) {return 0}
+
+  if (f === n) {
     return c
   } 
     return nthFibonacci(n, c, c+l, f+1);
