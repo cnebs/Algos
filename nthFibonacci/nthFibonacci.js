@@ -20,12 +20,12 @@
  *
  */
 
-var nthFibonacci = function (n, l=0, c=1, f=1) {
+var nthFibonacci = function (n, last=0, curr=1, fib=1) {
   
-  if (n === 0) {return 0}
-  if (f === n) {return c} 
-  return nthFibonacci(n, c, c+l, f+1);
+  // if (n === 0) {return 0}
+  // if (f === n) {return c} 
+  // return nthFibonacci(n, c, c+l, f+1);
+
+  n === 0 ? 0 : fib === n ? curr : nthFibonacci(n, curr, curr+last, fib+1)
 
 };
-
-console.log(nthFibonacci(10));
