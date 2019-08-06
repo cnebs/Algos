@@ -28,7 +28,6 @@ var nthFibonacci = function (n) {
   } else { // add previous two ( n - 1 ) + ( n - 2 )
     nthFibonacci(n-1) + nthFibonacci(n-2)
   }
-
 };
 
 
