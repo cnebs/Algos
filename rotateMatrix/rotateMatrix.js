@@ -49,26 +49,28 @@ var rotateMatrix = function(matrix, direction
 
   const res = [];
 
-  if (direction === 1) {
+  if (direction === -1) {
+    for (let column = matrix[0].length-1; column > -1; column--) {
+  
+      let newRow = [];
+  
+      for (let row in matrix) {
+  
+        newRow.push(matrix[row][column])
+  
+      }
+  
+      res.push(newRow)
+  
+    }
+  }
+
+  else {
   for (let column in matrix[0]) {
 
     let newRow = [];
 
     for (let row = matrix.length-1; row > -1 ; row--) {
-
-      newRow.push(matrix[row][column])
-
-    }
-
-    res.push(newRow)
-
-  }
-} else if (direction === -1) {
-  for (let column = matrix[0].length-1; column > -1; column--) {
-
-    let newRow = [];
-
-    for (let row in matrix) {
 
       newRow.push(matrix[row][column])
 
@@ -89,4 +91,4 @@ console.log(rotateMatrix([
     [5,6,7,8],
     [9,'A','B','C'],
     ['D','E','F','G']
-   ], 1))
+   ]))
