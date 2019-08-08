@@ -5,10 +5,12 @@
  */
 
 var primeTester = function(n) {
-  if (typeof n !== 'number' || 
-            n < 1 || 
-            n % 1 !== 0 || 
-            n % 2 === 0) {
+ 
+  if (n===2) {
+    return true;
+  }
+
+  if (typeof n !== 'number' || n < 1 || n % 1 !== 0 || n % 2 === 0 || n===1) {
 
     // n isn't a number or n is less than 1 or n is not an integer
 
@@ -24,13 +26,14 @@ var primeTester = function(n) {
       if ( n % i === 0 ) {
         return false;
       }
-    }
+  }
+
    // otherwise return true
     return true;
 
 };
 
-console.log(primeTester(27))
+console.log(primeTester(2))
 
 /* Extra credit: Write a function that generates a list of all prime numbers
  * in a user-specified range (inclusive). If you're not quite sure where to start,
