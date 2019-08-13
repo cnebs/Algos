@@ -50,12 +50,13 @@ var characterFrequency = function(string) {
     results.push([char, obj[char]]);
   }
   
-  results.sort( (a,b) => b[1] - a[1] );
-  results.sort( (a, b) => a[1] === b[1] && a[0] > b[0] ? 1 : 0 )
+  // results.sort( (a,b) => b[1] - a[1] );
+  // console.log('trying to sort by frequency: ',results)
+  // results.sort( (a, b) => a[1] === b[1] && a[0] > b[0] ? 1 : 0 )
   
   return results;
 
 };
 
-let charFreq = characterFrequency('supercalifredgalisticexpialidocious');
+let charFreq = characterFrequency('aabbbcd');
 console.log(charFreq);
