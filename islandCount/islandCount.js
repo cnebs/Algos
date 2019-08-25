@@ -7,4 +7,7 @@
 
 function countIslands(mapStr) {
   // Your code here.
+
+  
+
 }

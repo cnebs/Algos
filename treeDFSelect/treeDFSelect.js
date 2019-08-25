@@ -35,6 +35,8 @@ var Tree = function(value) {
   this.children = [];
 };
 
+
+// code here 
 Tree.prototype.DFSelect = function(filter) {
   const results = [];
 
@@ -42,15 +44,13 @@ Tree.prototype.DFSelect = function(filter) {
     if(filter(node.value, depth)) {
       results.push(node.value);
     }
-
     node.children.forEach( child => {
       helper(child, depth+1)
     })
   };
 
-  helper(this,0);
+  helper(this, 0);
   return results;
-
 };
 
 
